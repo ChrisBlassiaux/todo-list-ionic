@@ -9,6 +9,18 @@ import { AlertController } from '@ionic/angular';
 
 export class HomePage {
 
-  constructor() {}
+  constructor(public alertController: AlertController) {}
 
+  async addTask() {
+    
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 }
