@@ -13,32 +13,22 @@
     </ion-text>
       <!-- Checkboxes in a List -->
       <div id="container">
+        <div class="wrapper">
+          <ion-input [(ngModel)]="value"></ion-input>
+          <ion-button (click)="addItem()" [disabled]='value.length<2'>add</ion-button>
+        </div>
         <ion-list>
-          <ion-item>
-            <ion-label>Manger une pomme</ion-label>
-            <ion-checkbox slot="start"></ion-checkbox>
-            <ion-icon name="trash-outline"></ion-icon>
-          </ion-item>
-          <ion-item>
-            <ion-label>Manger une pomme</ion-label>
-            <ion-checkbox slot="start"></ion-checkbox>
-            <ion-icon name="trash-outline"></ion-icon>
-          </ion-item>
-          <ion-item>
-            <ion-label>Manger une pomme</ion-label>
-            <ion-checkbox slot="start"></ion-checkbox>
-            <ion-icon name="trash-outline"></ion-icon>
-          </ion-item>
-          <ion-item>
-            <ion-label>Manger une pomme</ion-label>
-            <ion-checkbox slot="start"></ion-checkbox>
-            <ion-icon name="trash-outline"></ion-icon>
+          <ion-item [class.done]="item.isDone" *ngFor="let item of items; let ind = index;">
+            <ion-label>{{ item.value }}</ion-label>
+            <!-- <ion-checkbox slot="start" (click)="setDone(ind"></ion-checkbox> -->
+            <ion-button (click)="setDone(ind)">Done</ion-button>
+            <ion-button (click)="deleteItem(ind)"><ion-icon name="trash-outline"></ion-icon></ion-button>
           </ion-item>
         </ion-list>
       </div>
 
     <!-- fab placed to the (vertical) center and end -->
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="addTask()">
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="newTask()">
       <ion-fab-button>
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
