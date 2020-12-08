@@ -14,24 +14,24 @@ export class HomePage implements OnInit{
 
   items:any = []
 
-  constructor() {}
-  // constructor(public alertController: AlertController) {}
+  // constructor() {}
+  constructor(public alertController: AlertController) {}
 
-  // async newTask() {
+  async newTask() {
     
-  //   const alert = await this.alertController.create({
-  //     cssClass: 'my-custom-class',
-  //     header: 'Nouvelle tâche',
-  //     inputs: [{
-  //       name: 'TaskName',
-  //       type: 'text',
-  //       placeholder: 'Manger une pomme'
-  //     }],
-  //     buttons: ['Valider']
-  //   });
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Nouvelle tâche',
+      inputs: [{
+        name: 'TaskName',
+        type: 'text',
+        placeholder: 'Manger une pomme'
+      }],
+      buttons: ['Valider']
+    });
 
-  //   await alert.present();
-  // }
+    await alert.present();
+  }
 
   ngOnInit() {
     if (localStorage.getItem('items')) {
@@ -59,4 +59,6 @@ export class HomePage implements OnInit{
     item.isDone = !item.isDone
     localStorage.setItem('items', JSON.stringify(this.items))
   }
+
+ 
 }

@@ -9,8 +9,9 @@
 <ion-content [fullscreen]="true">
   <div class="bg-img">
     <ion-text color="primary">
-      <h2 class="ion-text-center">0 tâche(s) à faire et 2 tâche(s) faites</h2>
-    </ion-text>
+      <h2 class="ion-text-center">{{ items.length }} tâche(s) à faire et {{ items.length }} tâche(s) faite(s)</h2>
+    </ion-text> 
+  
       <!-- Checkboxes in a List -->
       <div id="container">
         <div class="wrapper">
@@ -20,8 +21,8 @@
         <ion-list>
           <ion-item [class.done]="item.isDone" *ngFor="let item of items; let ind = index;">
             <ion-label>{{ item.value }}</ion-label>
-            <!-- <ion-checkbox slot="start" (click)="setDone(ind"></ion-checkbox> -->
-            <ion-button (click)="setDone(ind)">Done</ion-button>
+            <ion-checkbox slot="start" (click)="setDone(ind)"></ion-checkbox>
+            
             <ion-button (click)="deleteItem(ind)"><ion-icon name="trash-outline"></ion-icon></ion-button>
           </ion-item>
         </ion-list>
@@ -33,9 +34,7 @@
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
-    
-
-
+  
 
   </div>
 </ion-content>
