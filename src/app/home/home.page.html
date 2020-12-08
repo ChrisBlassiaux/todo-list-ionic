@@ -1,20 +1,46 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      TodoList
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="bg-img">
+    <ion-text color="primary">
+      <h2 class="ion-text-center">0 tâche(s) à faire et 2 tâche(s) faites</h2>
+    </ion-text>
+      <!-- Checkboxes in a List -->
+      <div id="container">
+        <ion-list>
+          <ion-item>
+            <ion-label>Manger une pomme</ion-label>
+            <ion-checkbox slot="start"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Manger une pomme</ion-label>
+            <ion-checkbox slot="start"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Manger une pomme</ion-label>
+            <ion-checkbox slot="start"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Manger une pomme</ion-label>
+            <ion-checkbox slot="start"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!-- fab placed to the (vertical) center and end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+
   </div>
 </ion-content>
