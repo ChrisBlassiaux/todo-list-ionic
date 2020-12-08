@@ -15,9 +15,12 @@ export class HomePage {
     
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
+      header: 'Nouvelle tâche',
+      inputs: [{
+        name: 'TaskName',
+        type: 'text',
+        placeholder: 'Manger une pomme'
+      }],
       buttons: ['OK']
     });
 
